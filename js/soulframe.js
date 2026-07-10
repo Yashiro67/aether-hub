@@ -41,5 +41,35 @@ const io = new IntersectionObserver(es=>{
 }, {threshold: 0.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+/* ---------- hearts drifting up around the ask for Wika ---------- */
+const cta = document.querySelector('.cta');
+function spawnCtaHeart(){
+  const el = document.createElement('div');
+  el.className = 'cta-heart';
+  el.textContent = '♥';
+  el.style.left = (4 + Math.random()*92) + '%';
+  el.style.fontSize = (11 + Math.random()*17) + 'px';
+  const dur = 6 + Math.random()*5;
+  el.style.animationDuration = dur + 's';
+  cta.appendChild(el);
+  setTimeout(()=>el.remove(), dur*1000);
+}
+let ctaTimer = null;
+new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if (e.isIntersecting && !ctaTimer){
+      ctaTimer = setInterval(spawnCtaHeart, 650);
+      for (let i = 0; i < 5; i++) setTimeout(spawnCtaHeart, i*260);
+    } else if (!e.isIntersecting && ctaTimer){
+      clearInterval(ctaTimer); ctaTimer = null;
+    }
+  });
+}, {threshold: 0.2}).observe(cta);
+
+/* she clicked Zagram: a little celebration on the way out */
+document.getElementById('zagram').addEventListener('click', ()=>{
+  for (let i = 0; i < 18; i++) setTimeout(spawnCtaHeart, i*55);
+});
+
 /* no browser context menu anywhere on the site */
 addEventListener('contextmenu', e=>e.preventDefault());

@@ -187,6 +187,7 @@ p.lead + p.lead{margin-top:22px}
 .cta-ask{
   letter-spacing:.08em;font-weight:200;color:#ffd7e4;
   text-shadow:0 0 44px rgba(255,120,170,.5), 0 0 90px rgba(255,120,170,.25);
+  margin-bottom:48px;
 }
 .btn-love{border-color:rgba(255,143,179,.6) !important;color:#ffd7e4 !important}
 .btn-love:hover{
