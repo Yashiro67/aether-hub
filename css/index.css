@@ -1,0 +1,34 @@
+/* ============================================================
+   index.css · landing page (ÆTHER intro)
+============================================================ */
+html,body{height:100%;overflow:hidden}
+body{
+  background:radial-gradient(ellipse at 50% 60%, #070b1d 0%, #02030a 70%);
+  -webkit-user-select:none;user-select:none;
+}
+canvas#stars{position:fixed;inset:0;width:100%;height:100%}
+
+.intro{
+  position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:30px;
+}
+.intro h1{
+  font-size:clamp(40px,8vw,96px);font-weight:100;letter-spacing:.5em;text-indent:.5em;
+  animation:breathe 5s ease-in-out infinite;
+  text-shadow:0 0 60px rgba(110,150,255,.5);
+}
+@keyframes breathe{0%,100%{opacity:.85;letter-spacing:.5em}50%{opacity:1;letter-spacing:.56em}}
+.intro p{font-size:13px;font-weight:300;letter-spacing:.4em;text-indent:.4em;color:#8494bd}
+
+.enter{
+  margin-top:26px;cursor:pointer;
+  background:transparent;color:#eaf0ff;font-family:inherit;
+  font-size:12px;letter-spacing:.5em;text-indent:.5em;padding:16px 46px;
+  border:1px solid rgba(200,215,255,.35);border-radius:40px;
+  transition:all .5s;
+}
+.enter:hover{
+  border-color:#fff;box-shadow:0 0 40px rgba(130,165,255,.35), inset 0 0 20px rgba(130,165,255,.15);
+  letter-spacing:.62em;
+}
+body.leaving .intro{transition:opacity .9s;opacity:0}

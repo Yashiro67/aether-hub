@@ -1,0 +1,5 @@
+# the site only uses the optimized .jpg copies; the raw screenshots stay local
+images/warframe/*.png
+
+Thumbs.db
+desktop.ini

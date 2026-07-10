@@ -1,0 +1,106 @@
+/* ============================================================
+   universe.css · the WebGL particle universe
+============================================================ */
+:root{
+  --fg:#eaf0ff;
+}
+html,body{height:100%;overflow:hidden;background:#02030a}
+body{
+  color:var(--fg);
+  -webkit-user-select:none;user-select:none;
+  cursor:crosshair;
+}
+canvas#gl{position:fixed;inset:0;width:100%;height:100%;display:block}
+
+/* ---------- HUD ---------- */
+.hud{position:fixed;inset:0;z-index:10;pointer-events:none;opacity:0;transition:opacity 1.6s ease .4s}
+.hud.on{opacity:1}
+.wordmark{
+  position:absolute;top:28px;left:36px;
+  font-weight:200;font-size:15px;letter-spacing:.55em;opacity:.85;
+}
+.wordmark b{font-weight:600}
+.scene-label{
+  position:absolute;left:0;right:0;bottom:86px;text-align:center;
+}
+.scene-title{
+  font-size:clamp(26px,4.2vw,52px);font-weight:100;letter-spacing:.42em;
+  text-indent:.42em; /* recenters letterspaced text */
+  text-shadow:0 0 30px rgba(120,160,255,.35);
+  opacity:0;transform:translateY(14px);
+}
+.scene-sub{
+  margin-top:14px;font-size:13px;font-weight:300;letter-spacing:.28em;text-indent:.28em;
+  opacity:0;color:#9fb0d8;
+}
+.scene-label.show .scene-title{animation:rise 1.4s cubic-bezier(.16,1,.3,1) forwards}
+.scene-label.show .scene-sub{animation:rise 1.4s cubic-bezier(.16,1,.3,1) .25s forwards}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+
+.dots{
+  position:absolute;left:0;right:0;bottom:44px;display:flex;gap:14px;justify-content:center;
+  pointer-events:auto;
+}
+.dots button{
+  width:8px;height:8px;border-radius:50%;border:1px solid rgba(200,215,255,.5);
+  background:transparent;cursor:pointer;padding:0;transition:all .5s;
+}
+.dots button.active{background:#fff;box-shadow:0 0 12px rgba(160,190,255,.9);border-color:#fff}
+
+.hint{
+  position:absolute;right:36px;bottom:34px;font-size:11px;letter-spacing:.2em;
+  color:#7385ad;text-align:right;line-height:1.9;
+}
+.hint b{color:#dbe5ff;font-weight:400}
+
+/* ---------- feature callouts (leader line + bare text, no box) ---------- */
+.callout{
+  position:absolute;inset:0;width:100%;height:100%;overflow:visible;
+  opacity:0;transition:opacity .45s ease;
+}
+.callout.show{opacity:1}
+.callout line{
+  stroke:rgba(220,230,255,.8);stroke-width:1;
+  filter:drop-shadow(0 0 2px rgba(0,0,10,.95));
+}
+.callout circle{fill:#fff;filter:drop-shadow(0 0 6px rgba(160,190,255,.95))}
+.callout-text{
+  position:absolute;max-width:300px;transform:translate(-50%,-50%);
+  font-size:13px;font-weight:400;line-height:1.75;letter-spacing:.04em;color:#fff;
+  text-align:center;
+  /* stacked dark halo so the bare text survives any background brightness */
+  text-shadow:
+    0 0 3px rgba(0,0,10,.95),
+    0 0 6px rgba(0,0,10,.95),
+    0 1px 10px rgba(0,0,12,.9),
+    0 0 22px rgba(0,0,14,.85),
+    0 0 44px rgba(0,0,16,.75);
+  opacity:0;transition:opacity .45s ease;
+}
+.callout-text.show{opacity:1}
+.callout-text b{
+  display:block;font-weight:600;font-size:10px;letter-spacing:.45em;
+  color:#cfdcff;margin-bottom:8px;
+}
+.mute{
+  position:absolute;top:24px;right:32px;pointer-events:auto;cursor:pointer;
+  background:transparent;border:1px solid rgba(200,215,255,.25);color:#aebcdf;
+  font-family:inherit;font-size:10px;letter-spacing:.25em;padding:8px 14px 8px 16px;border-radius:20px;
+  transition:all .4s;
+}
+.mute:hover{border-color:rgba(200,215,255,.7);color:#fff}
+
+/* ---------- back to hub ---------- */
+.back{
+  position:absolute;top:62px;left:36px;pointer-events:auto;cursor:pointer;
+  text-decoration:none;color:#7385ad;
+  font-size:10px;letter-spacing:.25em;
+  transition:all .4s;
+}
+.back:hover{color:#fff;letter-spacing:.32em}
+
+/* ---------- WebGL unavailable ---------- */
+.nogl{
+  position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;
+  text-align:center;line-height:1.8;color:#9fb0d8;font-size:14px;padding:40px;
+}

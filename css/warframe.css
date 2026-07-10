@@ -1,0 +1,183 @@
+/* ============================================================
+   warframe.css · Warframe introduction page
+============================================================ */
+html{scroll-behavior:smooth}
+body{
+  background:#04050a;
+  color:#e8eef7;overflow-x:clip;
+}
+::selection{background:rgba(230,190,110,.35)}
+canvas#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+
+.progress{
+  position:fixed;top:0;left:0;height:2px;width:0;z-index:40;
+  background:linear-gradient(90deg,#e6be6e,#7fe0d0);
+  box-shadow:0 0 12px rgba(230,190,110,.8);
+}
+.back{
+  position:fixed;top:24px;left:32px;z-index:40;
+  text-decoration:none;color:#9aa8c7;font-size:10px;letter-spacing:.28em;
+  padding:9px 16px;border:1px solid rgba(200,215,255,.2);border-radius:20px;
+  background:rgba(4,5,10,.5);backdrop-filter:blur(6px);
+  transition:all .4s;
+}
+.back:hover{color:#fff;border-color:rgba(230,190,110,.8)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;z-index:3;min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:26px;text-align:center;padding:20px;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:-1;
+  background:url("../images/warframe/hero-fashion.jpg") center 30%/cover no-repeat;
+  filter:brightness(.48) saturate(1.08);
+  -webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 60%,transparent 100%);
+  animation:heropan 26s ease-in-out infinite alternate;
+}
+@keyframes heropan{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero .kicker{font-size:12px;letter-spacing:.6em;text-indent:.6em;color:#8ea0c9;animation:heroin 1.6s ease both}
+.hero h1{
+  font-size:clamp(44px,9vw,120px);font-weight:100;letter-spacing:.32em;text-indent:.32em;
+  color:#f2ead6;text-shadow:0 0 70px rgba(230,190,110,.45);
+  animation:heroin 1.6s ease .3s both;
+}
+.hero .tag{font-size:12px;letter-spacing:.42em;text-indent:.42em;color:#c9b483;animation:heroin 1.6s ease .6s both}
+@keyframes heroin{from{opacity:0;transform:translateY(26px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.chev{
+  position:absolute;bottom:36px;left:50%;width:18px;height:18px;
+  border-right:1px solid #c9b483;border-bottom:1px solid #c9b483;
+  transform:translateX(-50%) rotate(45deg);opacity:.8;
+  animation:chev 2.2s ease-in-out infinite;
+}
+@keyframes chev{0%,100%{transform:translateX(-50%) translateY(0) rotate(45deg);opacity:.8}50%{transform:translateX(-50%) translateY(12px) rotate(45deg);opacity:.25}}
+
+/* ---------- sections ---------- */
+section{position:relative;z-index:3;max-width:1080px;margin:0 auto;padding:130px 40px}
+.kick{font-size:11px;letter-spacing:.55em;color:#e6be6e;margin-bottom:22px}
+h2{font-size:clamp(26px,4vw,44px);font-weight:100;letter-spacing:.22em;margin-bottom:34px;color:#f4f7ff}
+p.lead{font-size:17px;font-weight:300;line-height:2;color:#b9c6e2;max-width:720px}
+p.lead b{color:#f2ead6;font-weight:400}
+p.lead + p.lead{margin-top:22px}
+
+.reveal{opacity:0;transform:translateY(46px);transition:opacity 1.1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* utility */
+.center{text-align:center}
+.mb-lg{margin-bottom:44px}
+
+/* framed screenshots */
+.shot{margin-top:56px}
+.shot img{
+  width:100%;display:block;border-radius:10px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 24px 80px rgba(0,0,10,.6);
+}
+.shot figcaption{margin-top:14px;font-size:10px;letter-spacing:.35em;color:#8ea0c9;text-align:center}
+
+/* stats */
+.stats{display:flex;flex-wrap:wrap;gap:60px;justify-content:center;text-align:center}
+.stat b{display:block;font-size:clamp(40px,5vw,64px);font-weight:100;color:#f2ead6;text-shadow:0 0 40px rgba(230,190,110,.35)}
+.stat span{font-size:10px;letter-spacing:.4em;color:#8ea0c9}
+
+/* faction grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.fcard{
+  --ac:230,190,110;
+  border:1px solid rgba(255,255,255,.08);border-top:2px solid rgba(var(--ac),.8);
+  border-radius:10px;padding:0 0 28px;background:rgba(8,10,20,.5);overflow:hidden;
+  transition:transform .5s, border-color .5s, box-shadow .5s;
+}
+.fcard:hover{transform:translateY(-6px);border-color:rgba(var(--ac),.5);box-shadow:0 14px 50px rgba(var(--ac),.12)}
+.fcard img{width:100%;height:170px;object-fit:cover;display:block;margin-bottom:22px}
+.fcard h3{font-size:15px;font-weight:400;letter-spacing:.35em;color:rgb(var(--ac));margin:0 24px 14px}
+.fcard p{font-size:13.5px;font-weight:300;line-height:1.9;color:#a9b6d4;margin:0 24px}
+
+/* screenshot rows (railjack gallery) */
+.shot-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:56px}
+.shot-row figure{margin:0}
+.shot-row img{
+  width:100%;height:200px;object-fit:cover;display:block;border-radius:10px;
+  border:1px solid rgba(255,255,255,.12);box-shadow:0 16px 50px rgba(0,0,10,.5);
+}
+.shot-row figcaption{margin-top:12px;font-size:9.5px;letter-spacing:.3em;color:#8ea0c9;text-align:center}
+
+/* mission board */
+.mgroup{margin-top:54px}
+.mgroup .gname{font-size:11px;letter-spacing:.5em;color:#7fe0d0;margin-bottom:6px}
+.missions{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));column-gap:46px}
+.m{padding:17px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.m h4{
+  font-size:13px;font-weight:400;letter-spacing:.28em;color:#f2ead6;margin-bottom:8px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.m .tag{
+  font-size:8.5px;letter-spacing:.2em;color:#7fe0d0;
+  border:1px solid rgba(127,224,208,.4);border-radius:12px;padding:3px 9px;
+}
+.m p{font-size:13px;font-weight:300;line-height:1.8;color:#a9b6d4}
+.m ul{list-style:none;margin-top:10px}
+.m li{font-size:12.5px;font-weight:300;line-height:1.9;color:#a9b6d4;padding-left:16px;position:relative}
+.m li::before{content:"·";position:absolute;left:2px;color:#e6be6e}
+.m li b{color:#d8c9a3;font-weight:400;letter-spacing:.1em}
+
+/* pillars & starters */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
+.pill{padding:34px 28px;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(8,10,20,.5)}
+.pill .n{font-size:11px;letter-spacing:.5em;color:#7fe0d0;margin-bottom:16px}
+.pill h3{font-size:17px;font-weight:300;letter-spacing:.24em;margin-bottom:14px;color:#f2f5ff}
+.pill p{font-size:13.5px;font-weight:300;line-height:1.9;color:#a9b6d4}
+.starter{text-align:center;padding:26px 26px 40px}
+.starter img{
+  width:100%;height:320px;object-fit:cover;object-position:center 15%;
+  border-radius:8px;margin-bottom:24px;display:block;
+  border:1px solid rgba(var(--ac),.35);
+  box-shadow:0 0 40px rgba(var(--ac),.14);
+}
+
+/* timeline */
+.tl{position:relative;margin-left:12px;padding-left:44px}
+.tl::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,rgba(230,190,110,.7),rgba(127,224,208,.4))}
+.tl-item{position:relative;padding-bottom:46px}
+.tl-item::before{
+  content:"";position:absolute;left:-48px;top:6px;width:9px;height:9px;border-radius:50%;
+  background:#e6be6e;box-shadow:0 0 14px rgba(230,190,110,.9);
+}
+.tl-item .yr{font-size:12px;letter-spacing:.4em;color:#e6be6e;margin-bottom:8px}
+.tl-item h3{font-size:19px;font-weight:300;letter-spacing:.14em;margin-bottom:8px}
+.tl-item p{font-size:13.5px;font-weight:300;line-height:1.8;color:#a9b6d4;max-width:560px}
+
+/* open worlds */
+.worlds{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.world{
+  height:210px;border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;
+  border:1px solid rgba(255,255,255,.09);transition:transform .5s;
+  position:relative;overflow:hidden;
+}
+.world:hover{transform:translateY(-6px)}
+.world h3{font-size:14px;letter-spacing:.3em;font-weight:400;margin-bottom:8px;position:relative}
+.world p{font-size:12px;font-weight:300;line-height:1.7;color:rgba(235,242,255,.75);position:relative}
+.w-eidolon{background:radial-gradient(ellipse at 30% 20%, rgba(90,140,220,.5), transparent 60%), linear-gradient(160deg,#0a1428,#050810)}
+.w-vallis{background:linear-gradient(180deg, rgba(4,8,14,.1) 30%, rgba(4,8,14,.78)), url("../images/warframe/fortuna.jpg") center/cover}
+.w-deimos{background:radial-gradient(ellipse at 40% 20%, rgba(220,120,60,.4), transparent 60%), linear-gradient(160deg,#1c0e08,#080405)}
+.w-duviri{background:radial-gradient(ellipse at 60% 20%, rgba(160,120,220,.4), transparent 60%), linear-gradient(160deg,#140e22,#070510)}
+
+/* free + cta */
+.free{max-width:760px;margin:0 auto;text-align:center}
+.free .lead{margin:0 auto}
+.cta{
+  position:relative;z-index:3;text-align:center;padding:150px 30px 130px;
+}
+.cta h2{margin-bottom:20px}
+.cta p{font-size:12px;letter-spacing:.35em;color:#8ea0c9;margin-bottom:44px}
+.cta a.btn{
+  display:inline-block;text-decoration:none;color:#f2ead6;
+  font-size:12px;letter-spacing:.45em;text-indent:.45em;padding:17px 50px;
+  border:1px solid rgba(230,190,110,.55);border-radius:40px;transition:all .5s;
+}
+.cta a.btn:hover{border-color:#ffd98c;box-shadow:0 0 46px rgba(230,190,110,.3);letter-spacing:.55em}
+.cta .home{display:block;margin-top:36px;color:#586897;font-size:10px;letter-spacing:.3em;text-decoration:none;transition:color .4s}
+.cta .home:hover{color:#fff}

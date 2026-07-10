@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WARFRAME · an introduction</title>
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/warframe.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="vignette"></div>
+<div class="progress" id="progress"></div>
+<a class="back" href="../hub.html">‹&nbsp;&nbsp;ALL&nbsp;WORLDS</a>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="kicker">AN&nbsp;INTRODUCTION&nbsp;TO</div>
+  <h1>WARFRAME</h1>
+  <div class="tag">SPACE&nbsp;NINJAS&nbsp;·&nbsp;FREE&nbsp;TO&nbsp;PLAY&nbsp;·&nbsp;SINCE&nbsp;2013</div>
+  <div class="chev"></div>
+</div>
+
+<section>
+  <div class="reveal">
+    <div class="kick">// WHAT IS THIS</div>
+    <h2>THE GAME THAT REFUSED TO DIE</h2>
+    <p class="lead">
+      <b>Warframe</b> is a free-to-play online action game by <b>Digital Extremes</b>.
+      It launched in 2013 to almost no attention, was written off by nearly everyone,
+      and then quietly became one of the most played and most updated games in the world,
+      more than a decade later. It's also the game I keep coming back to, which is why
+      I built this page.
+    </p>
+    <p class="lead">
+      It is a third-person shooter, a melee slasher, a parkour playground and a deep RPG
+      at the same time. You play solo or in squads of four, running missions across the
+      entire solar system. It is playable on PC, PlayStation, Xbox, Switch and mobile,
+      with cross-play and cross-save.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="stats reveal">
+    <div class="stat"><b data-count="2013">0</b><span>OPEN&nbsp;BETA</span></div>
+    <div class="stat"><b data-count="60" data-suffix="+">0</b><span>WARFRAMES</span></div>
+    <div class="stat"><b data-count="600" data-suffix="+">0</b><span>WEAPONS</span></div>
+    <div class="stat"><b data-count="70" data-suffix="M+">0</b><span>REGISTERED&nbsp;TENNO</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="reveal">
+    <div class="kick">// THE PREMISE</div>
+    <h2>YOU ARE TENNO</h2>
+    <p class="lead">
+      Centuries after the fall of the <b>Orokin Empire</b>, a golden civilization as brilliant
+      as it was cruel, you wake from cryosleep on a dying ship. You are a <b>Tenno</b>:
+      a warrior from the Old War, bound to a biomechanical exosuit of terrifying power
+      called a <b>Warframe</b>.
+    </p>
+    <p class="lead">
+      The Origin System you wake into is carved up by factions that all want you dead,
+      enslaved, or dissected. Your job: take it back, one mission at a time, and slowly
+      uncover what you actually are. The story goes places you will not expect.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="reveal">
+    <div class="kick">// KNOW YOUR ENEMY</div>
+    <h2>THE FACTIONS</h2>
+  </div>
+  <div class="grid reveal">
+    <div class="fcard" style="--ac:224,90,70">
+      <img src="../../images/warframe/grineer.jpg" alt="Grineer" loading="lazy">
+      <h3>GRINEER</h3>
+      <p>A rotting empire of mass-produced clones. Degenerate bodies, industrial armor,
+      infinite numbers, permanent anger. What they lack in elegance they make up in artillery.</p>
+    </div>
+    <div class="fcard" style="--ac:90,160,255">
+      <img src="../../images/warframe/corpus.jpg" alt="Corpus" loading="lazy">
+      <h3>CORPUS</h3>
+      <p>A merchant cult that worships profit and salvaged Orokin technology. They field
+      shielded crewmen and walking robot proxies, and would happily sell you the gun that shoots you.</p>
+    </div>
+    <div class="fcard" style="--ac:130,220,90">
+      <img src="../../images/warframe/infested.jpg" alt="Infested" loading="lazy">
+      <h3>INFESTED</h3>
+      <p>The Technocyte plague: flesh that remembers being people. It grows over ships,
+      colonies and moons, and it screams while it spreads. Bring a flamethrower.</p>
+    </div>
+    <div class="fcard" style="--ac:240,214,140">
+      <img src="../../images/warframe/orokin.jpg" alt="Orokin" loading="lazy">
+      <h3>OROKIN</h3>
+      <p>The extinct golden empire that built the Warframes, and everything else worth
+      fighting over. Their towers are pristine, their morality was not. Mostly dead. Mostly.</p>
+    </div>
+    <div class="fcard" style="--ac:200,110,220">
+      <img src="../../images/warframe/sentients.jpg" alt="Sentients" loading="lazy">
+      <h3>SENTIENTS</h3>
+      <p>Self-repairing machines the Orokin sent to terraform another star system.
+      They finished the job, came back, and brought a grudge that ended an empire.</p>
+    </div>
+    <div class="fcard" style="--ac:127,224,208">
+      <img src="../../images/warframe/tenno.jpg" alt="The Tenno" loading="lazy">
+      <h3>THE TENNO</h3>
+      <p>You. The blade the Orokin forged when nothing else could stop the Sentients,
+      and the one weapon they never managed to control.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="reveal">
+    <div class="kick">// HOW IT PLAYS</div>
+    <h2>MOVEMENT IS A WEAPON</h2>
+  </div>
+  <div class="cols reveal">
+    <div class="pill">
+      <div class="n">01 · PARKOUR</div>
+      <h3>BULLET-JUMP EVERYTHING</h3>
+      <p>Warframe's movement system is the best in the genre and it isn't close: bullet-jumps,
+      wall-runs, slides and aim-glides chain into a flow where touching the ground feels optional.
+      Once it clicked for me, every other shooter felt like wading through mud.</p>
+    </div>
+    <div class="pill">
+      <div class="n">02 · ARSENAL</div>
+      <h3>GUNS, BLADES, CHAOS</h3>
+      <p>Primary, secondary and melee: from sniper rifles and shotguns to throwing knives
+      that come back and a whip made of fire. Every weapon levels up and is customized through
+      <b>mods</b>, a card system with absurd build-crafting depth.</p>
+    </div>
+    <div class="pill">
+      <div class="n">03 · POWERS</div>
+      <h3>EVERY FRAME A DEMIGOD</h3>
+      <p>Each Warframe has four unique abilities and a distinct fantasy: stop time, summon
+      shadow clones of dead enemies, become a walking gun turret, spread plague, or simply
+      refuse to take damage. Collect them all; they're all earnable in-game.</p>
+    </div>
+  </div>
+  <figure class="shot reveal">
+    <img src="../../images/warframe/movement.jpg" alt="A Warframe sliding at full speed through a neon-lit corridor" loading="lazy">
+    <figcaption>ME, AT FULL TILT THROUGH THE BACKSTREETS · TOUCHING THE GROUND IS OPTIONAL</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="reveal">
+    <div class="kick">// WHAT I ACTUALLY DO ALL DAY</div>
+    <h2>THE MISSION BOARD</h2>
+    <p class="lead">Every node on the star chart runs one of these. Some take five minutes,
+    some hold you hostage for an hour because "one more wave" is a lie we all tell ourselves.
+    The full board:</p>
+  </div>
+
+  <div class="mgroup reveal">
+    <div class="gname">THE CLASSICS</div>
+    <div class="missions">
+      <div class="m"><h4>EXTERMINATE</h4><p>Kill everything between you and extraction. The purest mission there is.</p></div>
+      <div class="m"><h4>CAPTURE</h4><p>Chase down a fleeing target, knock them over, scoop them up. The speedrunner's favourite.</p></div>
+      <div class="m"><h4>RESCUE</h4><p>Break a hostage out of a guarded cell and walk them home before the wardens trigger the execution.</p></div>
+      <div class="m"><h4>SPY</h4><p>Three data vaults full of lasers and cameras. Ghost through them, or fight the lockdown you caused.</p></div>
+      <div class="m"><h4>ASSASSINATION</h4><p>A named boss, a proper arena, a Warframe blueprint at the end. The classic hunt.</p></div>
+      <div class="m"><h4>SABOTAGE</h4><p>Find the thing that keeps the enemy running, and un-run it. It comes in flavours:</p>
+        <ul>
+          <li><b>HIVE</b> Burn three Infested hives and the tumors feeding them.</li>
+          <li><b>OROKIN</b> Step through Void portals to shut a tower down from the inside.</li>
+          <li><b>REACTOR</b> Blow a ship's core. How you handle the coolant decides the loot.</li>
+          <li><b>SEALAB</b> Crack the pressure systems and let the ocean finish the job.</li>
+        </ul></div>
+      <div class="m"><h4>ASSAULT <span class="tag">KUVA FORTRESS</span></h4><p>Storm the Grineer fortress head-on: breach its defenses, gut its core, leave.</p></div>
+      <div class="m"><h4>HIJACK</h4><p>Steal a massive enemy vehicle and escort it out, feeding it your own shields to keep it rolling.</p></div>
+      <div class="m"><h4>JUNCTION</h4><p>The gates between planets. A specter of a Warframe stands in your way; beat it to unlock the next world.</p></div>
+    </div>
+  </div>
+
+  <div class="mgroup reveal">
+    <div class="gname">HOLD THE LINE</div>
+    <div class="missions">
+      <div class="m"><h4>DEFENSE</h4><p>Waves of enemies, one objective. Hold it as long as your build (or your patience) lasts.</p></div>
+      <div class="m"><h4>MOBILE DEFENSE</h4><p>Defense for people in a hurry: carry the datamass, hack the console, hold, repeat.</p></div>
+      <div class="m"><h4>MIRROR DEFENSE</h4><p>Two crystals in two mirrored arenas, and the whole squad teleports between them.</p></div>
+      <div class="m"><h4>SHRINE DEFENSE</h4><p>Koumei's twist on Defense: protect the shrine while her dice decide how lucky you get.</p></div>
+      <div class="m"><h4>SURVIVAL</h4><p>Endless. Life support drops, enemies escalate, and greed always keeps you one capsule too long.</p>
+        <ul>
+          <li><b>KUVA</b> Feed the capsules to a harvester instead and farm the Queens' favourite resource.</li>
+          <li><b>CONJUNCTION</b> Lua's haunted version, with Thrax spirits and its own currency.</li>
+        </ul></div>
+      <div class="m"><h4>INTERCEPTION</h4><p>Four radio towers, four capture points. Hold more of them than the enemy does.</p></div>
+      <div class="m"><h4>EXCAVATION</h4><p>Power the diggers, guard the diggers, repeat. The dirt pays out in cryotic and relics.</p></div>
+      <div class="m"><h4>DISRUPTION</h4><p>Carry keys to four conduits while Demolishers sprint in to blow them up. Kill the runner or lose the round.</p></div>
+      <div class="m"><h4>DEFECTION</h4><p>Escort squads of Grineer defectors to evac. They walk slowly. The Infested do not.</p></div>
+      <div class="m"><h4>INFESTED SALVAGE</h4><p>Keep the consoles clear of Infested sludge long enough to salvage a ship's manifest.</p></div>
+      <div class="m"><h4>SANCTUARY ONSLAUGHT</h4><p>Simaris throws you through portal after portal of dense enemy zones. Pure XP, pure chaos.</p></div>
+      <div class="m"><h4>ARENA</h4><p>Gladiator rules. Rathuum pits you against Grineer executioners; The Index against Corpus champions, with your own credits on the line.</p></div>
+    </div>
+  </div>
+
+  <div class="mgroup reveal">
+    <div class="gname">SPECIAL OPERATIONS</div>
+    <div class="missions">
+      <div class="m"><h4>ALCHEMY</h4><p>Feed an Entrati crucible the right elements, then survive whatever the brew attracts.</p></div>
+      <div class="m"><h4>NETRACELLS</h4><p>Hunt a target deep in the Sanctum and hold a shrinking kill-zone. Weekly rewards worth the trouble.</p></div>
+      <div class="m"><h4>ISOLATION VAULT <span class="tag">DEIMOS</span></h4><p>Descend beneath the surface, past a Necramech that strongly objects, into sealed Orokin vaults.</p></div>
+      <div class="m"><h4>HEIST <span class="tag">FORTUNA</span></h4><p>Vox Solaris' multi-stage operation, ending face to face with a building-sized Orb spider.</p></div>
+      <div class="m"><h4>ASCENSION</h4><p>Ride a colossal elevator up through a Corpus tower, defending it the whole climb.</p></div>
+      <div class="m"><h4>FREE ROAM / BOUNTY <span class="tag">OPEN WORLDS</span></h4><p>The job board of the Plains, the Vallis and the Drift: chained objectives across the landscape, stacked rewards.</p></div>
+    </div>
+  </div>
+
+  <div class="mgroup reveal">
+    <div class="gname">WINGS &amp; WARSHIPS</div>
+    <div class="missions">
+      <div class="m"><h4>PURSUIT <span class="tag">ARCHWING</span></h4><p>A space chase: run down a fleeing Grineer ship and shoot out its engines.</p></div>
+      <div class="m"><h4>RUSH <span class="tag">ARCHWING</span></h4><p>Full burn through a gauntlet of fire. Get to the end fast, or not at all.</p></div>
+      <div class="m"><h4>SKIRMISH <span class="tag">RAILJACK</span></h4><p>The standard Railjack battle: fighters, crewships and a side objective, all in open space.</p></div>
+      <div class="m"><h4>VOLATILE <span class="tag">RAILJACK</span></h4><p>A ship's reactor is melting down. Regulate the vents from inside while your Railjack keeps the outside busy.</p></div>
+      <div class="m"><h4>ORPHIX <span class="tag">RAILJACK</span></h4><p>Sentient machines that shut Warframes down on sight. Bring your Necramech.</p></div>
+    </div>
+  </div>
+
+  <div class="mgroup reveal">
+    <div class="gname">THE ZARIMAN TEN ZERO</div>
+    <div class="missions">
+      <div class="m"><h4>VOID CASCADE</h4><p>The fastest mission in the game: cleanse hijacked Exolizers before the cascade snowballs out of control.</p></div>
+      <div class="m"><h4>VOID FLOOD</h4><p>Seal ruptures in reality by collecting vitoplast. The Void does not enjoy being sealed.</p></div>
+      <div class="m"><h4>VOID ARMAGEDDON</h4><p>Tower defense, Zariman style: build turrets, hold the Exodampers, and meet what the Void sends back.</p></div>
+    </div>
+  </div>
+
+  <div class="mgroup reveal">
+    <div class="gname">HÖLLVANIA, 1999</div>
+    <div class="missions">
+      <div class="m"><h4>FACEOFF</h4><p>I'll write this one up properly soon.</p></div>
+      <div class="m"><h4>LEGACYTE HARVEST</h4><p>I'll write this one up properly soon.</p></div>
+      <div class="m"><h4>HELL-SCRUB</h4><p>I'll write this one up properly soon.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="reveal">
+    <div class="kick">// FIRST CHOICE</div>
+    <h2>YOUR STARTER FRAME</h2>
+    <p class="lead mb-lg">The game opens by offering you one of three.
+    There is no wrong answer, I promise. You can earn the other two (and every other
+    frame) later.</p>
+  </div>
+  <div class="cols reveal">
+    <div class="pill starter" style="--ac:240,214,140">
+      <img src="../../images/warframe/excalibur.jpg" alt="Excalibur" loading="lazy">
+      <h3>EXCALIBUR</h3>
+      <p>The swordsman. Balanced, aggressive, honest. Turns into a lightsaber blender
+      when things get personal. The classic pick.</p>
+    </div>
+    <div class="pill starter" style="--ac:200,110,220">
+      <img src="../../images/warframe/mag.jpg" alt="Mag" loading="lazy">
+      <h3>MAG</h3>
+      <p>The magnetist. Crushes armor, yanks enemies into the air, turns bullets into
+      area damage. Highest skill ceiling of the three.</p>
+    </div>
+    <div class="pill starter" style="--ac:120,200,255">
+      <img src="../../images/warframe/volt.jpg" alt="Volt" loading="lazy">
+      <h3>VOLT</h3>
+      <p>The storm. Casts lightning, shields the whole squad, and runs faster than the
+      mission timer. Speed is a form of damage.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="reveal">
+    <div class="kick">// A DECADE OF STORY</div>
+    <h2>THE ROAD SO FAR</h2>
+  </div>
+  <div class="tl reveal">
+    <div class="tl-item"><div class="yr">2013</div><h3>Open Beta</h3>
+      <p>Digital Extremes bets the studio on a weird space-ninja game nobody wanted to publish.</p></div>
+    <div class="tl-item"><div class="yr">2015</div><h3>The Second Dream</h3>
+      <p>The quest that transformed Warframe's reputation forever. The less you know going in, the better. I won't spoil it; this one is sacred.</p></div>
+    <div class="tl-item"><div class="yr">2016</div><h3>The War Within</h3>
+      <p>Doubles down on the revelations and hands you powers you didn't know the game was hiding.</p></div>
+    <div class="tl-item"><div class="yr">2017</div><h3>Plains of Eidolon</h3>
+      <p>The corridors open into a full landscape, with hundred-meter Eidolon giants that walk the plains at night.</p></div>
+    <div class="tl-item"><div class="yr">2018</div><h3>The Sacrifice & Fortuna</h3>
+      <p>The story of Umbra, plus a neon debt-colony on Venus with hoverboards.</p></div>
+    <div class="tl-item"><div class="yr">2021</div><h3>The New War</h3>
+      <p>The Sentient invasion finally arrives. The entire system burns, and you play every side of it.</p></div>
+    <div class="tl-item"><div class="yr">2023</div><h3>Whispers in the Walls</h3>
+      <p>A new chapter begins beneath Deimos: grim, funny, and setting up everything that comes next.</p></div>
+    <div class="tl-item"><div class="yr">JUN 2024</div><h3>The Jade Shadow</h3>
+      <p>The Stalker, your oldest enemy, gets the most human story the game has ever told. Short, heavy, unforgettable.</p></div>
+    <div class="tl-item"><div class="yr">DEC 2024</div><h3>Warframe: 1999</h3>
+      <p>A rogue time-travel arc to a 1999 that never happened: proto-frames, a boy band of villains, and a mall-goth apocalypse. Yes, really.</p></div>
+    <div class="tl-item"><div class="yr">DEC 2025</div><h3>The Old Peace</h3>
+      <p>The saga reaches back to the Old War itself: the oldest wounds in the Origin System, finally reopened.</p></div>
+    <div class="tl-item"><div class="yr">JUN 2026</div><h3>Jade Shadow: Constellations</h3>
+      <p>The newest chapter: Jade's story continues, and the Origin System keeps growing thirteen years in.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="reveal">
+    <div class="kick">// BEYOND THE CORRIDORS</div>
+    <h2>OPEN WORLDS</h2>
+  </div>
+  <div class="worlds reveal">
+    <div class="world w-eidolon">
+      <h3>PLAINS OF EIDOLON</h3>
+      <p>Earth. Grass, Grineer camps, and colossal spectral giants after dark.</p>
+    </div>
+    <div class="world w-vallis">
+      <h3>ORB VALLIS</h3>
+      <p>Venus, terraformed into coolant snowfields. Corpus country. Bring a hoverboard.</p>
+    </div>
+    <div class="world w-deimos">
+      <h3>CAMBION DRIFT</h3>
+      <p>A moon that is one single living organism. The ground has opinions.</p>
+    </div>
+    <div class="world w-duviri">
+      <h3>DUVIRI</h3>
+      <p>A storybook realm trapped in a time loop, ruled by a bored, murderous king.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="reveal">
+    <div class="kick">// CAPTAIN YOUR OWN WARSHIP</div>
+    <h2>RAILJACK</h2>
+    <p class="lead">
+      Eventually you stop borrowing ships and build your own. The <b>Railjack</b> is a
+      fully crewed interceptor you customize, upgrade and fly through open space:
+      dogfighting Grineer galleons, boarding enemy crewships mid-battle, and walking
+      back out of their airlock when you're done.
+    </p>
+    <p class="lead">
+      One player flies, the others man turrets, forge munitions, patch hull breaches or
+      launch out the side in their Archwing. Bring friends, or hire an NPC crew and run
+      it solo like a one-Tenno pirate operation. Ship combat and on-foot combat blend
+      seamlessly, with no loading screen between the two.
+    </p>
+  </div>
+  <div class="shot-row reveal">
+    <figure>
+      <img src="../../images/warframe/railjack-outside.jpg" alt="A Railjack seen from outside in open space" loading="lazy">
+      <figcaption>MY RAILJACK, FROM THE OUTSIDE</figcaption>
+    </figure>
+    <figure>
+      <img src="../../images/warframe/railjack-pilot.jpg" alt="The Railjack pilot seat view" loading="lazy">
+      <figcaption>THE PILOT SEAT</figcaption>
+    </figure>
+    <figure>
+      <img src="../../images/warframe/railjack-inside.jpg" alt="Inside the Railjack" loading="lazy">
+      <figcaption>BELOW DECK</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="free reveal">
+    <div class="kick center">// THE CATCH THAT ISN'T</div>
+    <h2 class="center">IT IS ACTUALLY FREE</h2>
+    <p class="lead">
+      Every Warframe and every weapon that affects gameplay can be <b>earned by playing</b>.
+      The premium currency, platinum, is <b>tradeable between players</b>, and plenty of us fund
+      our entire accounts by selling spare parts to other Tenno. Money buys convenience
+      and fashion. And in Warframe, fashion is the true endgame. Exhibit A:
+    </p>
+    <figure class="shot">
+      <img src="../../images/warframe/hero-fashion.jpg" alt="A fashion-framed Warframe displayed with its arsenal" loading="lazy">
+      <figcaption>MY FASHION FRAME · I REST MY CASE</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="reveal">
+    <div class="kick center">// READY?</div>
+    <h2>SEE YOU IN THE ORIGIN SYSTEM</h2>
+    <p>WARFRAME.COM · PC / PLAYSTATION / XBOX / SWITCH / MOBILE</p>
+    <a class="btn" href="https://www.warframe.com" target="_blank" rel="noopener">PLAY&nbsp;FREE</a>
+    <a class="home" href="../hub.html">‹ BACK TO ALL WORLDS</a>
+  </div>
+</div>
+
+<script src="../../js/warframe.js"></script>
+</body>
+</html>
