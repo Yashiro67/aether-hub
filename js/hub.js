@@ -112,8 +112,23 @@ document.querySelectorAll('a.card').forEach(card=>{
   card.addEventListener('pointerleave', ()=>{ card.style.transform = ''; });
   card.addEventListener('click', e=>{
     e.preventDefault();
+    if (card.hasAttribute('data-chooser')){ chooser.classList.add('open'); return; }
     document.body.classList.add('leaving');
     setTimeout(()=>location.href = card.getAttribute('href'), 750);
+  });
+});
+
+/* ---------- the frames chooser ---------- */
+const chooser = document.getElementById('chooser');
+const closeChooser = ()=>chooser.classList.remove('open');
+chooser.querySelector('.chooser-back').addEventListener('click', closeChooser);
+chooser.querySelector('.chooser-close').addEventListener('click', closeChooser);
+addEventListener('keydown', e=>{ if (e.code==='Escape') closeChooser(); });
+chooser.querySelectorAll('a.mini').forEach(m=>{
+  m.addEventListener('click', e=>{
+    e.preventDefault();
+    document.body.classList.add('leaving');
+    setTimeout(()=>location.href = m.getAttribute('href'), 750);
   });
 });
 

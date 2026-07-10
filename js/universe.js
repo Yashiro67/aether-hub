@@ -492,6 +492,7 @@ function goTo(i){
   chime(SCENES[scene].note);
   startPad(SCENES[scene].note);
   updateHud();
+  buildHotspots();
 }
 const next = ()=>goTo(scene+1);
 
@@ -537,6 +538,39 @@ function pick(cx, cy){
   calloutText.classList.add('show');
   calloutSvg.classList.add('show');
 }
+/* ---------------- clickable-feature markers ---------------- */
+const hotspotsEl = document.getElementById('hotspots');
+let hotspotList = [];
+function buildHotspots(){
+  hotspotsEl.innerHTML = '';
+  hotspotList = SCENES[scene].parts.map(part=>{
+    const el = document.createElement('div');
+    el.className = 'hotspot';
+    hotspotsEl.appendChild(el);
+    return {el, part, anchor: part.pts[(part.pts.length*0.25)|0]};
+  });
+}
+function updateHotspots(){
+  hotspotsEl.classList.toggle('ready', morph > 0.95);
+  for (const h of hotspotList){
+    const s = project(h.anchor);
+    if (!s){ h.el.style.display = 'none'; continue; }
+    h.el.style.display = '';
+    h.el.style.left = s[0]+'px';
+    h.el.style.top  = s[1]+'px';
+    h.el.classList.toggle('active', h.part === activePart);
+  }
+}
+/* pointer cursor whenever a feature is within grabbing range */
+function hoverHit(cx, cy){
+  for (const part of SCENES[scene].parts)
+    for (const p of part.pts){
+      const s = project(p);
+      if (s && Math.hypot(s[0]-cx, s[1]-cy) < 70) return true;
+    }
+  return false;
+}
+
 /* called every frame so the label follows the feature as it rotates */
 function updateCallout(){
   if (!activePart) return;
@@ -579,6 +613,7 @@ canvas.addEventListener('pointermove', e=>{
     pitch = Math.max(-1.35, Math.min(1.35, pitch));
   }
   pX=e.clientX; pY=e.clientY;
+  if (!rDown && !lDown) canvas.style.cursor = hoverHit(e.clientX, e.clientY) ? 'pointer' : 'crosshair';
 });
 addEventListener('pointerup', e=>{
   if (e.button===2){ rDown=false; }
@@ -611,6 +646,7 @@ muteBtn.addEventListener('click', e=>{ e.stopPropagation(); toggleMute(); });
 document.getElementById('hud').classList.add('on');
 started = true;
 updateHud();
+buildHotspots();
 /* browsers only allow audio after a user gesture */
 const armAudio = ()=>{ if(!AC) initAudio(); };
 addEventListener('pointerdown', armAudio, {once:true});
@@ -658,6 +694,7 @@ function frame(nowMs){
   ]);
   lastRot = rot;
   updateCallout();
+  updateHotspots();
 
   /* morph progress + palette lerp */
   morph = Math.min(1, (now-morphStart)/MORPH_DUR);

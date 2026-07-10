@@ -53,6 +53,27 @@ canvas#gl{position:fixed;inset:0;width:100%;height:100%;display:block}
 }
 .hint b{color:#dbe5ff;font-weight:400}
 
+/* ---------- clickable-feature markers ---------- */
+.hotspots{position:absolute;inset:0;opacity:0;transition:opacity .8s ease}
+.hotspots.ready{opacity:1}
+.hotspot{
+  position:absolute;width:9px;height:9px;margin:-5px 0 0 -5px;border-radius:50%;
+  background:rgba(255,255,255,.9);
+  box-shadow:0 0 10px rgba(160,190,255,.95), 0 0 3px rgba(0,0,10,.8);
+}
+.hotspot::after{
+  content:"";position:absolute;inset:-8px;border-radius:50%;
+  border:1px solid rgba(210,225,255,.75);
+  animation:hotpulse 2.2s ease-out infinite;
+}
+@keyframes hotpulse{
+  0%{transform:scale(.45);opacity:.95}
+  70%{transform:scale(1.7);opacity:0}
+  100%{transform:scale(1.7);opacity:0}
+}
+.hotspot.active{box-shadow:0 0 16px rgba(255,255,255,1)}
+.hotspot.active::after{animation:none;opacity:0}
+
 /* ---------- feature callouts (leader line + bare text, no box) ---------- */
 .callout{
   position:absolute;inset:0;width:100%;height:100%;overflow:visible;

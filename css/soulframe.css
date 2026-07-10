@@ -1,0 +1,73 @@
+/* ============================================================
+   soulframe.css · an early look at Warframe's fantasy sibling
+============================================================ */
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(ellipse at 50% 20%, #0c1a14 0%, #070f0c 55%, #040806 100%);
+  color:#e4efe8;overflow-x:clip;
+}
+::selection{background:rgba(158,224,182,.3)}
+canvas#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+
+.back{
+  position:fixed;top:24px;left:32px;z-index:40;
+  text-decoration:none;color:#93aa9d;font-size:10px;letter-spacing:.28em;
+  padding:9px 16px;border:1px solid rgba(200,230,210,.2);border-radius:20px;
+  background:rgba(4,8,6,.5);backdrop-filter:blur(6px);
+  transition:all .4s;
+}
+.back:hover{color:#fff;border-color:rgba(158,224,182,.8)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;z-index:3;min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:26px;text-align:center;padding:20px;
+}
+.hero .kicker{font-size:12px;letter-spacing:.6em;text-indent:.6em;color:#8fa898;animation:heroin 1.6s ease both}
+.hero h1{
+  font-size:clamp(40px,8.5vw,110px);font-weight:100;letter-spacing:.34em;text-indent:.34em;
+  color:#dff0e2;text-shadow:0 0 70px rgba(158,224,182,.4);
+  animation:heroin 1.6s ease .3s both;
+}
+.hero .tag{font-size:12px;letter-spacing:.42em;text-indent:.42em;color:#a9c9b2;animation:heroin 1.6s ease .6s both}
+@keyframes heroin{from{opacity:0;transform:translateY(26px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.chev{
+  position:absolute;bottom:36px;left:50%;width:18px;height:18px;
+  border-right:1px solid #a9c9b2;border-bottom:1px solid #a9c9b2;
+  transform:translateX(-50%) rotate(45deg);opacity:.8;
+  animation:chev 2.2s ease-in-out infinite;
+}
+@keyframes chev{0%,100%{transform:translateX(-50%) translateY(0) rotate(45deg);opacity:.8}50%{transform:translateX(-50%) translateY(12px) rotate(45deg);opacity:.25}}
+
+/* ---------- sections ---------- */
+section{position:relative;z-index:3;max-width:920px;margin:0 auto;padding:120px 40px}
+.kick{font-size:11px;letter-spacing:.55em;color:#9ee0b6;margin-bottom:22px}
+h2{font-size:clamp(24px,3.6vw,40px);font-weight:100;letter-spacing:.22em;margin-bottom:34px;color:#f0f7f2}
+p.lead{font-size:17px;font-weight:300;line-height:2;color:#b8cabd;max-width:720px}
+p.lead b{color:#dff0e2;font-weight:400}
+p.lead + p.lead{margin-top:22px}
+
+.reveal{opacity:0;transform:translateY(46px);transition:opacity 1.1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+.center{text-align:center}
+
+/* the still-growing notice */
+.growing{
+  border:1px dashed rgba(158,224,182,.35);border-radius:12px;
+  padding:38px 34px;text-align:center;background:rgba(8,16,12,.5);
+}
+.growing p{font-size:14px;font-weight:300;line-height:2;color:#a9c9b2;max-width:560px;margin:0 auto}
+
+/* cta */
+.cta{position:relative;z-index:3;text-align:center;padding:130px 30px 120px}
+.cta h2{margin-bottom:20px}
+.cta p{font-size:12px;letter-spacing:.35em;color:#8fa898;margin-bottom:44px}
+.cta a.btn{
+  display:inline-block;text-decoration:none;color:#dff0e2;
+  font-size:12px;letter-spacing:.45em;text-indent:.45em;padding:17px 50px;
+  border:1px solid rgba(158,224,182,.5);border-radius:40px;transition:all .5s;
+}
+.cta a.btn:hover{border-color:#bdf0d0;box-shadow:0 0 46px rgba(158,224,182,.3);letter-spacing:.55em}
+.cta .home{display:block;margin-top:36px;color:#5c7566;font-size:10px;letter-spacing:.3em;text-decoration:none;transition:color .4s}
+.cta .home:hover{color:#fff}
